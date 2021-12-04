@@ -1,0 +1,102 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog id="idCopyfromDialog" title="">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar>
+					<Title text="Source Information"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<l:VerticalLayout class="" width="800px">
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Material:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+					<Label text="Material Description:" class="sapUiLargeMarginBegin sapUiTinyMarginTop"/>
+					<Text/>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Batch:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Prod. Order:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Press Load:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Inspection Lot:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Operation:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+					<Label text="Operation Description:" class="sapUiLargeMarginBegin sapUiTinyMarginTop"/>
+					<Text/>
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Inspection Points:" class="sapUiTinyMarginTop" width="12em"/>
+					<Button text="Select" press="onPressSelectSourceInspPoint"/>
+				</l:HorizontalLayout>
+			</l:VerticalLayout>
+		</Panel>
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar>
+					<Title text="Target Information"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<Table items="{/ProductCollection}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="Items(##)" level="H2"/>
+						<ToolbarSpacer/>
+						<Button tooltip="Sort" icon="sap-icon://multiselect-all" press="handleSortButtonPressed"/>
+						<Button tooltip="Filter" icon="sap-icon://bullet-text" press="handleFilterButtonPressed"/>
+						<Button tooltip="Group" icon="sap-icon://delete" press="handleGroupButtonPressed"/>
+						<ToggleButton icon="sap-icon://sys-add" tooltip="Enable Custom Context Menu" press="onToggleContextMenu"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<OverflowToolbar  visible="false">
+						<Text />
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="Select"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Material"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+						<Text text="Material Description"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Target Inspection Lot"/>
+					</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Target Operationt"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier title="{Name}" text="{ProductId}"/>
+							<Text text="{SupplierName}"/>
+							<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+							<ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}" state="{ path: 'WeightMeasure' }"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<beginButton>
+			<Button text="Save" press="onSave"/>
+		</beginButton>
+		<endButton>
+			<Button text="Close" press="onPressClosePopUp"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
