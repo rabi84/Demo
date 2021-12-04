@@ -1,0 +1,115 @@
+{
+	"ProductCollection": [{
+			"UserID": "ZZTAWSEN",
+			"MaterialID": 400000111,
+			"Date": "10/4/2021",
+			"ProductId": "HT-1000",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg",
+			"Status": "Available",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Width": 30,
+			"Depth": 18,
+			"Height": 3,
+			"DimUnit": "cm",
+			"Time": "10:04 AM CT"
+
+		}, {
+			"UserID": "ZZTAWSEN",
+			"MaterialID": 400000112,
+			"Date": "10/4/2021",
+			"ProductId": "HT-1000",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg",
+			"Status": "Available",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Width": 30,
+			"Depth": 18,
+			"Height": 3,
+			"DimUnit": "cm",
+			"Time": "10 AM CT"
+		}, {
+			"UserID": "ZZBEACHN",
+			"MaterialID": 400000113,
+			"Date": "10/4/2021",
+			"ProductId": "HT-1000",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg",
+			"Status": "Available",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Width": 30,
+			"Depth": 18,
+			"Height": 3,
+			"DimUnit": "cm",
+			"Time": "10 AM CT"
+		}, {
+			"UserID": "HUGHESD",
+			"MaterialID": 400000114,
+			"Date": "10/4/2021",
+			"ProductId": "HT-1000",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg",
+			"Status": "Available",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Width": 30,
+			"Depth": 18,
+			"Height": 3,
+			"DimUnit": "cm",
+			"Time": "10 AM CT"
+		}
+
+	],
+	"ProductCollectionStats": {
+		"Counts": {
+			"Total": 4
+		}
+	},
+	"InspectionLotCollection": [
+
+		{
+			"InspSource": "Source1",
+			"InspPoint": "Insp Point1",
+			"InspTarget": "Taget 1",
+			"InspChars": "Characteristics"
+		},
+		{
+			"InspSource": "Source2",
+			"InspPoint": "Insp Point2",
+			"InspTarget": "target 2",
+			"InspChars": "Characteristics"
+		}
+	]
+
+}
