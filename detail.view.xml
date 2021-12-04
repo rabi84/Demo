@@ -1,0 +1,72 @@
+<mvc:View controllerName="sap.ui.demo.fiori2.controller.Detail" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" showFooter="true"
+		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:HBox alignContent="Center" alignItems="Center" justifyContent="End" class="sapUiSmallMarginEnd">
+						<m:Title text="Copy of Results Recording Heading" wrapping="true"/>
+					</m:HBox>
+				</expandedHeading>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:VBox justifyContent="End" class="sapUiSmallMarginEnd">
+				<m:Text text="{products>UserID}"/>
+			</m:VBox>
+			<m:ObjectHeader icon="{products>ProductPicUrl}" iconDensityAware="false" iconAlt="{Name}" title="{products>MaterialID}"
+				number="{products>Date}" numberUnit="{products>Time}" class="sapUiResponsivePadding--header"></m:ObjectHeader>
+		</headerContent>
+		
+		<sections>
+			<ObjectPageSection title="">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table id="idProductsTable" items="{products>/InspectionLotCollection}">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:Title text="Records({products>/InspectionLotCollection/length})" level="H2"/>
+										<m:ToolbarSpacer/>
+										<m:Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+										<m:Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed"/>
+										<m:Button tooltip="Group" icon="sap-icon://group-2" press="handleGroupButtonPressed"/>
+										<m:ToggleButton icon="sap-icon://menu" tooltip="Enable Custom Context Menu" press="onToggleContextMenu"/>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:infoToolbar>
+									<m:OverflowToolbar id="vsdFilterBar" visible="false">
+										<m:Text id="vsdFilterLabel"/>
+									</m:OverflowToolbar>
+								</m:infoToolbar>
+								<m:columns>
+									<m:Column width="12em"><m:Text text="Source Insp. Lot"/></m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true"><m:Text text="Source Insp. Point"/></m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" hAlign="End"><m:Text text="Target Inspection Lot"/></m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><m:Text text="Master INspection Charasteristics"/></m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem vAlign="Middle">
+										<m:cells>
+											<m:ObjectIdentifier text="{products>InspSource}"/>
+											<m:Text text="{products>InspPoint}"/>
+											<m:Text text="{products>InspTarget}"/>
+											<m:Text text="{products>InspChars}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Copy New Results" press="open"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>
