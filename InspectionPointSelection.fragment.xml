@@ -1,0 +1,79 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog id="idInspectionPointSel" title="">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar>
+					<Title text="Source Information"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<l:VerticalLayout class="" width="800px">
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Inspection Lot:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="sapUiTinyMargin">
+					<Label text="Source Inspection Opeation:" class="sapUiTinyMarginTop" width="12em"/>
+					<MultiInput valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"></MultiInput>
+				</l:HorizontalLayout>
+				
+			</l:VerticalLayout>
+		</Panel>
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar>
+					<Title text="Target Information"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<Table id="idInspectionPointsTable" items="{/ProductCollection}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="Inspection Points(3)" level="H2"/>
+						<ToolbarSpacer/>
+						<Button tooltip="Sort" icon="sap-icon://filter" press="handleSortButtonPressed"/>
+						<Button tooltip="Sort" icon="sap-icon://multiselect-all" press="handleSortButtonPressed"/>
+						<Button tooltip="Filter" icon="sap-icon://bullet-text" press="handleFilterButtonPressed"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<OverflowToolbar  visible="false">
+						<Text />
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="Select"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Material"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+						<Text text="Material Description"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Target Inspection Lot"/>
+					</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Target Operationt"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier title="{Name}" text="{ProductId}"/>
+							<Text text="{SupplierName}"/>
+							<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+							<ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}" state="{ path: 'WeightMeasure' }"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<beginButton>
+			<Button text="Save" press="onSave"/>
+		</beginButton>
+		<endButton>
+			<Button text="Close" press="onCloseInspFrag"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
